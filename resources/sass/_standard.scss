@@ -1,0 +1,37 @@
+@import "configParam";
+$txt_not_standard: 1; // Valore base senza unità
+$multiply: 1;
+$txt_size: $txt_not_standard * $multiply; // Valore base senza unità
+$txt_delta: 0.25; // Incremento per ogni intestazione, senza unità
+$txt_unit: rem; // Unità di misura scelta
+$txt_family: 'Roboto', sans-serif;
+
+* {
+    transition: all 0.5s;
+    font-family: $txt_family;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Nasconde la scrollbar in Chrome, Safari e Opera */
+}
+
+body{
+    width: 100%;
+}
+
+@for $i from 1 through 6 {
+    $current_size: $txt_size + ($txt_delta * $i);
+    h#{7 - $i} {
+        font-size: $current_size + $txt_unit;
+    }
+}
+
+p, a {
+    font-size: $txt_size + $txt_unit;
+}
+
+div {
+    width: 100%;
+}

@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "name": "Home",
+        "type": "nav",
+        "url": "home.php"
+    },
+    {
+        "id": 2,
+        "name": "About",
+        "type": "nav",
+        "url": "what_about.php"
+    },
+    {
+        "id": 3,
+        "name": "Services",
+        "type": "nav",
+        "url": "services.php"
+    },
+    {
+        "id": 4,
+        "name": "Contact",
+        "type": "nav-signed",
+        "url": "contact.php"
+    },
+    {
+        "id": 5,
+        "name": "Sign In",
+        "type": "nav_to_sign",
+        "url": "login.php?stato=login"
+    },
+    {
+        "id": 6,
+        "name": "Sign Up",
+        "type": "nav_to_sign",
+        "url": "login.php?stato=signup"
+    },
+    {
+        "id": 7,
+        "name": "Sign Out",
+        "type": "nav-signed",
+        "icon": "fas fa-sign-out-alt",
+        "url": "sign_out.php"
+    },
+    {
+        "id": 8,
+        "name": "hamburgher-menu",
+        "type": "nav-hamburgher",
+        "icon": "fas fa-bars",
+        "url": ""
+    }
+]
