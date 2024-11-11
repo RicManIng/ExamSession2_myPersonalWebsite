@@ -59,7 +59,7 @@ footer {
 
 
 
-/* Media query per tablet */
+/* Media query for tablet visualization*/
 @media (max-width: 1024px), only screen and (min-resolution: 2dppx) {
     footer {
         padding: 60px;
@@ -79,48 +79,57 @@ footer {
     }
 }
   
-  /* Media query per smartphone */
-  @media (max-width: 768px), only screen and (min-resolution: 2dppx) {
-    footer {
-      padding: 20px;
+/* Media query for smartphone visualization */
+@media (max-width: 768px), only screen and (min-resolution: 2dppx) {
+  footer {
+    padding: 20px;
 
-        $txt_size: 2;
-        a, p{
-            font-size: $txt_size + $txt_unit;
-        }
+      $txt_size: 2;
+      a, p{
+          font-size: $txt_size + $txt_unit;
+      }
 
-        @for $i from 1 through 6 {
-            $current_size: $txt_size + ($txt_delta * $i);
-            h#{7 - $i} {
-                font-size: $current_size + $txt_unit;
-            }
-        }
+      @for $i from 1 through 6 {
+          $current_size: $txt_size + ($txt_delta * $i);
+          h#{7 - $i} {
+              font-size: $current_size + $txt_unit;
+          }
+      }
+
+      .info {
+          padding: 20px;
   
-        .info {
-            padding: 20px;
-    
-            div {
-            gap: 15px;
-    
-            div {
-                /* flex-direction: column; */
-    
-                a {
+          div {
+          gap: 5vh;
+
+            div{
+              gap: 10vw;
+
+              a {
                 width: auto;
-                margin-bottom: 10px;
+
+                i{
+                  font-size: 6rem;
                 }
+              }
             }
-    
-            iframe {
-                width: 100%;
-            }
-        }
-      }
+          }
   
-      .copyright {
-        margin: 30px 0;
-        font-size: 0.9rem;
+          iframe {
+            /* to modify font-size of txt in iframe I need javascript, 
+            not the main focus of this exam */
+            width: 100%;
+          }
+
+          .doveTrovarmi{
+            margin: 5vh 0;
+          }
       }
+    }
+
+    .copyright {
+      margin: 10vh 0;
+      font-size: 0.9rem;
     }
   }
 
