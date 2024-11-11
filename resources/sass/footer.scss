@@ -1,58 +1,135 @@
 @import "configParam";
 
-footer{
-    background-color: $footer_background_color;
-    margin: 0px;
+footer {
+  background-color: $footer_background_color;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $footer_txt_color;
+
+  .info {
+    margin: 30px 0;
+    padding: 30px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: $footer_txt_color;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 50px;
 
-    .info{
-        margin: 30px 0px;
-        padding: 30px;
+    div {
+      width: 45%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 20px;
+
+      div {
         display: flex;
+        justify-content: center;
+        gap: 20px;
         flex-direction: row;
-        align-items: flex-start;
-        gap: 50px;
 
-        div{
-            width: 50%;
-            text-align: center;
-            display: flex;
+        a {
+          width: auto;
+        }
+      }
+
+      .social {
+        margin-top: 30px;
+      }
+
+      i {
+        color: $footer_txt_color;
+      }
+
+      iframe {
+        width: 80%;
+        margin-top: 40px;
+      }
+    }
+  }
+
+  .copyright {
+    margin: 50px 0;
+    text-align: center;
+  }
+}
+
+
+
+/* Media query for tablet visualization*/
+@media (max-width: 1024px), only screen and (min-resolution: 2dppx) {
+    footer {
+        padding: 60px;
+        .info {
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            gap: 20px;
-
-            div{
-                display: flex;
-                justify-content: center;
-                gap: 20px;
-                flex-direction: row;
-
-                a{
-                    width: 10%;
+            gap: 30px;
+  
+            div {
+                width: 100%;
+  
+                iframe {
+                width: 100%;
                 }
             }
-
-            .social{
-                margin-top: 30px;
-            }
-
-            i{
-                color: $footer_txt_color;
-            }
-
-            iframe{
-                width: 80%;
-            }
-            
         }
     }
-
-    .copyright{
-        margin: 50px 0px;
-        text-align: center;
-    }
 }
+  
+/* Media query for smartphone visualization */
+@media (max-width: 768px), only screen and (min-resolution: 2dppx) {
+  footer {
+    padding: 20px;
+
+      $txt_size: 2;
+      a, p{
+          font-size: $txt_size + $txt_unit;
+      }
+
+      @for $i from 1 through 6 {
+          $current_size: $txt_size + ($txt_delta * $i);
+          h#{7 - $i} {
+              font-size: $current_size + $txt_unit;
+          }
+      }
+
+      .info {
+          padding: 20px;
+  
+          div {
+          gap: 5vh;
+
+            div{
+              gap: 10vw;
+
+              a {
+                width: auto;
+
+                i{
+                  font-size: 6rem;
+                }
+              }
+            }
+          }
+  
+          iframe {
+            /* to modify font-size of txt in iframe I need javascript, 
+            not the main focus of this exam */
+            width: 100%;
+          }
+
+          .doveTrovarmi{
+            margin: 5vh 0;
+          }
+      }
+    }
+
+    .copyright {
+      margin: 10vh 0;
+      font-size: 0.9rem;
+    }
+  }
+
