@@ -4,7 +4,7 @@
     <?php
         require_once('head.php');
     ?>
-    <title>Centro Sportivo Home</title> 
+    <title>Riccardo Mancinelli Engineering</title> 
     <link rel="stylesheet" href="resources/css/home.min.css">
 </head>
 <body>

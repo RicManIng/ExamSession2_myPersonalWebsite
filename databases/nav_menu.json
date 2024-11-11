@@ -45,8 +45,15 @@
     {
         "id": 8,
         "name": "hamburgher-menu",
-        "type": "nav-hamburgher",
-        "icon": "fas fa-bars",
+        "type": "nav-hamburgher-open",
+        "icon": "fas fa-bars fa-2x",
+        "url": ""
+    },
+    {
+        "id": 9,
+        "name": "hamburgher-menu",
+        "type": "nav-hamburgher-close",
+        "icon": "fa-solid fa-x fa-2x",
         "url": ""
     }
 ]
