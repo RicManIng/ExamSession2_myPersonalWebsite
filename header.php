@@ -1,12 +1,12 @@
 <header>
-    <img src="./resources/img/logo-bg.png" alt="mio-logo">
+    <a href="home.php" title='go to home page' class='link-image'><img src="./resources/img/logo-bg.png" alt="mio-logo"></a>
     <nav class="center-nav" id="center-nav">
         <!-- common part of nav bar -->
         <?php foreach($nav_array as $nav): ?>
-            <?php if($nav['type'] == 'nav-hamburgher-open'): ?>
-                <a href="#center-nav"><i class="<?= $nav['icon']; ?>"></i></a>
-            <?php elseif($nav['type'] == 'nav-hamburgher-close'): ?>
-                <a href="#menu"><i class="<?= $nav['icon']; ?>"></i></a>
+            <?php if($nav['type'] == 'nav-hamburger-open'): ?>
+                <a href="#center-nav" class='hamburger-open'><i class="<?= $nav['icon']; ?>"></i></a>
+            <?php elseif($nav['type'] == 'nav-hamburger-close'): ?>
+                <a href="#menu" class='hamburger-close'><i class="<?= $nav['icon']; ?>"></i></a>
             <?php endif; ?>
         <?php endforeach; ?>
         <ul class="menu" id="menu">
@@ -14,14 +14,22 @@
                 <!-- if user is logged show the full menu -->
                 <?php foreach($nav_array as $nav): ?>
                     <?php if($nav['type'] == 'nav' || $nav['type'] == 'nav-signed' && $nav['id'] < 5): ?>
-                        <li><a href="<?php echo $nav['url']; ?>"><?php echo $nav['name']; ?></a></li>
+                        <?php if(isset($_GET['selectet']) && $_GET['selectet'] == $nav['id']): ?>
+                            <li><a href="<?php echo $nav['url']; ?>" class="selected"><?php echo $nav['name']; ?></a></li>
+                        <?php else: ?>
+                            <li><a href="<?php echo $nav['url']; ?>"><?php echo $nav['name']; ?></a></li>
+                        <?php endif; ?>    
                     <?php endif; ?>
                 <?php endforeach; ?>
             <?php else: ?>
                 <!-- if user is not logged show the short menu -->
                 <?php foreach($nav_array as $nav): ?>
                     <?php if($nav['type'] == 'nav' && $nav['id'] < 5): ?>
-                        <li><a href="<?php echo $nav['url']; ?>"><?php echo $nav['name']; ?></a></li>
+                        <?php if(isset($_GET['selectet']) && $_GET['selectet'] == $nav['id']): ?>
+                            <li><a href="<?php echo $nav['url']; ?>" class="selected"><?php echo $nav['name']; ?></a></li>
+                        <?php else: ?>
+                            <li><a href="<?php echo $nav['url']; ?>"><?php echo $nav['name']; ?></a></li>
+                        <?php endif; ?> 
                     <?php endif; ?>
                 <?php endforeach; ?>
             <?php endif; ?>
@@ -33,14 +41,14 @@
                 <!-- if user is logged show the sign out button -->
                 <?php foreach($nav_array as $nav): ?>
                     <?php if($nav['type'] == 'nav' || $nav['type'] == 'nav-signed' && $nav['id'] >= 5): ?>
-                        <li><a href="<?php echo $nav['url']; ?>"><?php echo $nav['name']; ?></a></li>
+                        <li><a href="<?php echo $nav['url']; ?>" class="logout"><?php echo $nav['name']; ?></a></li>
                     <?php endif; ?>
                 <?php endforeach; ?>
             <?php else: ?>
                 <!-- if user is not logged show the registration/login button -->
                 <?php foreach($nav_array as $nav): ?>
                     <?php if($nav['type'] == 'nav_to_sign' && $nav['id'] >= 5): ?>
-                        <li><a href="<?php echo $nav['url']; ?>"><?php echo $nav['name']; ?></a></li>
+                        <li><a href="<?php echo $nav['url']; ?>" class="<?= ($nav['name'] == 'Login') ? 'login':'signup' ?>"><?php echo $nav['name']; ?></a></li>
                     <?php endif; ?>
                 <?php endforeach; ?>
             <?php endif; ?>

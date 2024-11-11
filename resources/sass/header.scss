@@ -1,0 +1,78 @@
+@import "configParam";
+
+header{
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $header-background-color-light;
+
+    .link-image{
+        height: 100%;
+
+        img{
+            height: 100%;
+        }
+    }
+    
+    .center-nav, .right-nav ul, .menu{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .hamburger-open, .hamburger-close{
+        display: none;
+    }
+
+    ul{
+        list-style-type: none;
+        gap: 50px;
+    }
+
+    ul li a{
+        text-decoration: none;
+        color: $header-txt-color-light;
+
+        &:hover{
+            color: $header-txt-color-hover-light;
+        }
+    }
+
+    .right-nav{
+        position: relative;
+        left: -3vw;
+
+        .login{
+            background-color: $header-login-light;
+            padding: 15px;
+            border-radius: 10px;
+            color: $header-login-txt-color-light;
+
+            &:hover{
+                background-color: $header-login-hover-light;
+                color: $header-login-txt-color-dark;
+            }
+        }
+
+        .signup{
+            background-color: $header-signup-light;
+            padding: 15px;
+            border-radius: 10px;
+            color: $header-signup-txt-color-light;
+
+            &:hover{
+                background-color: $header-signup-hover-light;
+                color: $header-signup-txt-color-light;
+            }
+        }
+
+        ul{
+            gap: 20px;
+        }
+    }
+
+    .center-nav .selected{
+        text-decoration: underline;
+        color: $header-txt-color-light-selected;
+    }
+}
