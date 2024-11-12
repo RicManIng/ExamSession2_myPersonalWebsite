@@ -3,36 +3,42 @@
         "id": 1,
         "name": "About",
         "type": "nav",
+        "title": "Go to about me page",
         "url": "what_about.php?selected=1"
     },
     {
         "id": 2,
         "name": "Services",
         "type": "nav",
+        "title": "Look at my services",
         "url": "services.php?selected=2"
     },
     {
         "id": 3,
         "name": "Portfolio",
         "type": "nav",
+        "title": "Look at my project portfolio",
         "url": "portfolio.php?selected=3"
     },
     {
         "id": 4,
         "name": "Contact",
         "type": "nav-signed",
+        "title": "Go to contact page",
         "url": "contact.php?selected=4"
     },
     {
         "id": 5,
         "name": "Sign Up",
         "type": "nav_to_sign",
+        "title": "Go to ragistration page",
         "url": "login.php?stato=signup"
     },
     {
         "id": 6,
         "name": "Login",
         "type": "nav_to_sign",
+        "title": "Go to login page",
         "url": "login.php?stato=login"
     },
     {
@@ -54,6 +60,13 @@
         "name": "hamburger-menu",
         "type": "nav-hamburger-close",
         "icon": "fa-solid fa-x fa-2x",
+        "url": ""
+    },
+    {
+        "id": 10,
+        "name": "Account",
+        "type": "nav-account-icon",
+        "icon": "fa-solid fa-user fa-2x",
         "url": ""
     }
 ]

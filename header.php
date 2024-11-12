@@ -14,7 +14,7 @@
                 <!-- if user is logged show the full menu -->
                 <?php foreach($nav_array as $nav): ?>
                     <?php if($nav['type'] == 'nav' || $nav['type'] == 'nav-signed' && $nav['id'] < 5): ?>
-                        <?php if(isset($_GET['selectet']) && $_GET['selectet'] == $nav['id']): ?>
+                        <?php if(isset($_GET['selected']) && $_GET['selected'] == $nav['id']): ?>
                             <li><a href="<?php echo $nav['url']; ?>" class="selected"><?php echo $nav['name']; ?></a></li>
                         <?php else: ?>
                             <li><a href="<?php echo $nav['url']; ?>"><?php echo $nav['name']; ?></a></li>
@@ -25,7 +25,7 @@
                 <!-- if user is not logged show the short menu -->
                 <?php foreach($nav_array as $nav): ?>
                     <?php if($nav['type'] == 'nav' && $nav['id'] < 5): ?>
-                        <?php if(isset($_GET['selectet']) && $_GET['selectet'] == $nav['id']): ?>
+                        <?php if(isset($_GET['selected']) && $_GET['selected'] == $nav['id']): ?>
                             <li><a href="<?php echo $nav['url']; ?>" class="selected"><?php echo $nav['name']; ?></a></li>
                         <?php else: ?>
                             <li><a href="<?php echo $nav['url']; ?>"><?php echo $nav['name']; ?></a></li>
@@ -35,7 +35,9 @@
             <?php endif; ?>
         </ul>
     </nav>
-    <nav class="right-nav">
+    <nav class="right-nav" id="right-nav">
+        <!-- insert here the toggle button for light/dark mode -->
+        <div class="toggle-container"><div class="toggle"></div></div>
         <ul>
             <?php if($UserLogged): ?>
                 <!-- if user is logged show the sign out button -->
