@@ -35,3 +35,17 @@ p, a {
 div {
     width: 100%;
 }
+
+
+@media only screen and (max-width: 768px), only screen and (min-resolution: 2dppx){
+      a, p{
+          font-size: $txt_size_phone + $txt_unit;
+      }
+
+      @for $i from 1 through 6 {
+          $current_size: $txt_size_phone + ($txt_delta * $i);
+          h#{7 - $i} {
+              font-size: $current_size + $txt_unit;
+          }
+      }
+}

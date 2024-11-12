@@ -52,21 +52,21 @@
         "id": 8,
         "name": "hamburger-menu",
         "type": "nav-hamburger-open",
-        "icon": "fas fa-bars fa-2x",
+        "icon": "fas fa-bars fa-3x",
         "url": ""
     },
     {
         "id": 9,
         "name": "hamburger-menu",
         "type": "nav-hamburger-close",
-        "icon": "fa-solid fa-x fa-2x",
+        "icon": "fa-solid fa-x fa-3x",
         "url": ""
     },
     {
         "id": 10,
         "name": "Account",
         "type": "nav-account-icon",
-        "icon": "fa-solid fa-user fa-2x",
+        "icon": "fa-solid fa-user fa-3x",
         "url": ""
     }
 ]

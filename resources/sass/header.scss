@@ -1,5 +1,7 @@
 @import "configParam";
+@import "standard";
 
+/* start the standard stylink */
 header{
     height: 10vh;
     display: flex;
@@ -21,8 +23,10 @@ header{
         flex-direction: row;
     }
 
-    .hamburger-open, .hamburger-close{
+    .hamburger-open, .hamburger-close, .account-open, .account-close{
         display: none;
+        color: $header-txt-color-light;
+        text-decoration: none;
     }
 
     ul{
@@ -38,6 +42,12 @@ header{
         &:hover{
             color: $header-txt-color-hover-light;
         }
+
+        /* modify font-size for phone viewport */
+        @media only screen and (max-width: 768px), only screen and (min-resolution: 2dppx){
+            font-size: $txt_size_phone + $txt_unit;
+        }
+        
     }
 
     .selected{
@@ -59,6 +69,11 @@ header{
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+        align-items: center;
+
+        @media only screen and (max-width: 768px), only screen and (min-resolution: 2dppx){
+            left: -5vw;
+        }
 
         .login{
             background-color: $header-login-light;
@@ -88,6 +103,7 @@ header{
             gap: 20px;
         }
 
+        /* styling of toggle button */
         .toggle-container {
             position: relative;
             width: 40px;
@@ -100,6 +116,12 @@ header{
             display: flex;
             align-items: center;
             margin-right: 20px;
+
+            @media only screen and (max-width: 768px), only screen and (min-resolution: 2dppx){
+                width: 60px;
+                height: 30px;
+                border-radius: 15px;
+            }
         
             .toggle-link {
                 position: relative;
@@ -115,28 +137,37 @@ header{
                     position: relative;
                     top: 1px;
                     left: 1px;
-                    width: 18px;
-                    height: 18px;
+                    width: 16px;
+                    height: 16px;
                     background-color: $header-txt-color-light;
+                    border: 1px solid $header-txt-color-dark;
                     border-radius: 50%;
                     transition: transform 0.3s;
+
+                    @media only screen and (max-width: 768px), only screen and (min-resolution: 2dppx){
+                        top: 0px;
+                        left: 0px;
+                        width: 28px;
+                        height: 28px;
+                        border: 2px solid $header-txt-color-dark;
+                    }
                 }
         
-                &.close {
-                    display: none; // Nasconde il link di chiusura per impostazione predefinita
+                .close {
+                    display: none; // hide close link by default
                 }
             }
         
-            /* Quando .toggle-container è il target */
+            /* when .toggle-container is the target */
             &:target {
-                background-color: #66bb6a;
+                background-color: $header-background-color-dark;
         
                 .toggle-link.open {
-                    display: none; // Nasconde il link di apertura
+                    display: none; // hide the open link
                 }
         
                 .toggle-link.close {
-                    display: block; // Mostra il link di chiusura
+                    display: block; // shows the close link
                 }
         
                 .toggle-link.close .toggle {
@@ -144,7 +175,7 @@ header{
                 }
             }
         
-            /* Stato di default: mostra solo il link di apertura */
+            /* default status: shows only open link */
             .toggle-link.open {
                 display: block;
             }
@@ -153,5 +184,116 @@ header{
                 display: none;
             }
         }
+    } 
+
+    @media only screen and (max-width: 1024px), only screen and (min-resolution: 2dppx){
+        .hamburger-open, .account-open{
+            display: flex;
+        }
+    
+        #menu{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 10vh;
+            left: 0vw;
+            width: 100vw;
+            max-height: 0vh;
+            overflow: hidden;
+            gap: 0px;
+            border-radius: none;
+
+            li{
+                width: 100%;
+                height: 10vh;
+
+                a{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-bottom: 1px solid $header-txt-color-light;
+                }
+            }
+        }
+
+        #menu{
+            background-color: $header-background-color-light;
+        }
+
+        #center-nav:target #menu{
+            max-height: 90vh;
+        }
+
+        #center-nav:target .hamburger-open{
+            display: none;
+        }
+
+        #center-nav:target .hamburger-close{
+            display: flex;
+        }
+
+        #center-nav{
+            height: 100%;
+
+            .hamburger-open, .hamburger-close{
+                height: 100%;
+                align-items: center;
+            }
+        }
+
+        .right-nav{
+            height: 100%;
+
+            .account-open, .account-close{
+                height: 100%;
+                align-items: center;
+            }
+
+            .login, .signup{
+                border-radius: 0px;
+                padding: 0px;
+            }
+        }
+
+        #right-nav:target #login-menu{
+            max-height: 90vh;
+        }
+
+        #right-nav:target .account-open{
+            display: none;
+        }
+
+        #right-nav:target .account-close{
+            display: flex;
+        }
+
+
+        #login-menu{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 10vh;
+            left: -65vw;
+            width: 100vw;
+            max-height: 0vh;
+            overflow: hidden;
+            gap: 0px;
+
+            li{
+                width: 100%;
+                height: 10vh;
+
+                a{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
     }
 }
+

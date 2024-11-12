@@ -37,6 +37,7 @@
     </nav>
     <nav class="right-nav" id="right-nav">
         <!-- insert here the toggle button for light/dark mode -->
+        <!-- This toggle button is currently not working; its functionality will be introduced later with the use of JavaScript.  -->
         <div class="toggle-container" id="toggle">
             <a href="#toggle" class="toggle-link open">
                 <div class="toggle"></div>
@@ -45,7 +46,14 @@
                 <div class="toggle"></div>
             </a>
         </div>
-        <ul>
+        <?php foreach($nav_array as $nav): ?>
+            <?php if($nav['type'] == 'nav-account-icon'): ?>
+                <a href="#right-nav" class='account-open'><i class="<?= $nav['icon']; ?>"></i></a>
+            <?php elseif($nav['type'] == 'nav-hamburger-close'): ?>
+                <a href="#login-menu" class='account-close'><i class="<?= $nav['icon']; ?>"></i></a>
+            <?php endif; ?>
+        <?php endforeach; ?>
+        <ul class="login-menu" id="login-menu">
             <?php if($UserLogged): ?>
                 <!-- if user is logged show the sign out button -->
                 <?php foreach($nav_array as $nav): ?>
