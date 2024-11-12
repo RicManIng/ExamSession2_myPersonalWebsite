@@ -37,7 +37,14 @@
     </nav>
     <nav class="right-nav" id="right-nav">
         <!-- insert here the toggle button for light/dark mode -->
-        <div class="toggle-container"><div class="toggle"></div></div>
+        <div class="toggle-container" id="toggle">
+            <a href="#toggle" class="toggle-link open">
+                <div class="toggle"></div>
+            </a>
+            <a href="#" class="toggle-link close">
+                <div class="toggle"></div>
+            </a>
+        </div>
         <ul>
             <?php if($UserLogged): ?>
                 <!-- if user is logged show the sign out button -->
