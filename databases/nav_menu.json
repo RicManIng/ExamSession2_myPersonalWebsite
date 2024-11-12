@@ -1,59 +1,72 @@
 [
     {
         "id": 1,
-        "name": "Home",
+        "name": "About",
         "type": "nav",
-        "url": "home.php"
+        "title": "Go to about me page",
+        "url": "what_about.php?selected=1"
     },
     {
         "id": 2,
-        "name": "About",
+        "name": "Services",
         "type": "nav",
-        "url": "what_about.php"
+        "title": "Look at my services",
+        "url": "services.php?selected=2"
     },
     {
         "id": 3,
-        "name": "Services",
+        "name": "Portfolio",
         "type": "nav",
-        "url": "services.php"
+        "title": "Look at my project portfolio",
+        "url": "portfolio.php?selected=3"
     },
     {
         "id": 4,
         "name": "Contact",
         "type": "nav-signed",
-        "url": "contact.php"
+        "title": "Go to contact page",
+        "url": "contact.php?selected=4"
     },
     {
         "id": 5,
-        "name": "Sign In",
-        "type": "nav_to_sign",
-        "url": "login.php?stato=login"
-    },
-    {
-        "id": 6,
         "name": "Sign Up",
         "type": "nav_to_sign",
+        "title": "Go to ragistration page",
         "url": "login.php?stato=signup"
     },
     {
+        "id": 6,
+        "name": "Login",
+        "type": "nav_to_sign",
+        "title": "Go to login page",
+        "url": "login.php?stato=login"
+    },
+    {
         "id": 7,
-        "name": "Sign Out",
+        "name": "Logout",
         "type": "nav-signed",
         "icon": "fas fa-sign-out-alt",
         "url": "sign_out.php"
     },
     {
         "id": 8,
-        "name": "hamburgher-menu",
-        "type": "nav-hamburgher-open",
-        "icon": "fas fa-bars fa-2x",
+        "name": "hamburger-menu",
+        "type": "nav-hamburger-open",
+        "icon": "fas fa-bars fa-3x",
         "url": ""
     },
     {
         "id": 9,
-        "name": "hamburgher-menu",
-        "type": "nav-hamburgher-close",
-        "icon": "fa-solid fa-x fa-2x",
+        "name": "hamburger-menu",
+        "type": "nav-hamburger-close",
+        "icon": "fa-solid fa-x fa-3x",
+        "url": ""
+    },
+    {
+        "id": 10,
+        "name": "Account",
+        "type": "nav-account-icon",
+        "icon": "fa-solid fa-user fa-3x",
         "url": ""
     }
 ]
