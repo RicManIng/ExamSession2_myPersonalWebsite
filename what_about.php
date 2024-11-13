@@ -5,7 +5,7 @@
         require_once('head.php');
     ?>
     <title>Riccardo Mancinelli Engineering</title> 
-    <link rel="stylesheet" href="resources/css/home.min.css">
+    <link rel="stylesheet" href="resources/css/what_about.min.css">
 </head>
 <body>
     <?php

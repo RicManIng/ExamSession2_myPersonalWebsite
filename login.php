@@ -14,76 +14,72 @@
         require_once('header.php');
 
         $error_message = null;
-        $utente_salvato = false;
-        $utente_caricato = false;
+        $user_saved = false;
+        $user_loaded = false;
 
         if(!empty($_POST)){
-            if($_GET['stato'] == 'signup'){
-                $condizioni_valide = true;
-                $file = './databases/user.json';
+            if($_GET['state'] == 'signup'){
+
+                $valid_conditions = true;
+
                 if(!(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirm_password']))){
-                    $condizioni_valide = false;
-                    $error_message = 'Errore: controlla di aver inserito tutti i campi';
+                    $valid_conditions = false;
+                    $error_message = 'Error: check there is no empty field';
                 } elseif ($_POST['password'] != $_POST['confirm_password']){
-                    $condizioni_valide = false;
-                    $error_message = 'Errore: le password non coincidono';
-                } elseif ($user->username_exists($_POST['username'], $file)){
-                    $condizioni_valide = false;
-                    $error_message = 'Errore: username già esistente';
+                    $valid_conditions = false;
+                    $error_message = 'Error: password and confirm password are different';
+                } elseif ($user->username_exists($_POST['username'], $file_user)){
+                    $valid_conditions = false;
+                    $error_message = 'Error: username already exists';
                 } elseif (!$user->set_username($_POST['username'])){
-                    $condizioni_valide = false;
-                    $error_message = 'Errore: username non valido';
+                    $valid_conditions = false;
+                    $error_message = 'Error: invalid username format';
                 } elseif (!$user->set_password($_POST['password'])){
-                    $condizioni_valide = false;
-                    $error_message = 'Errore: password non valida';
-                } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-                    $condizioni_valide = false;
-                    $error_message = 'Errore: email non valida';
-                } elseif(!$user->set_birthDate($_POST['giorno'], $_POST['mese'], $_POST['anno'])){
-                    $error_message = 'Errore: data di nascita non valida';
-                } elseif($user->email_exists($_POST['email'], $file)){
-                    $condizioni_valide = false;
-                    $error_message = 'Errore: email già esistente';
+                    $valid_conditions = false;
+                    $error_message = 'Error: invalid password format';
+                } elseif(!$user->set_birthDate($_POST['day'], $_POST['month'], $_POST['year'])){
+                    $error_message = 'Error: invalid birth date format';
+                } elseif($user->email_exists($_POST['email'], $file_user)){
+                    $valid_conditions = false;
+                    $error_message = 'Error: email already exists';
                 } elseif(!$user->set_email($_POST['email'])){
-                    $condizioni_valide = false;
-                    $error_message = 'Errore: email non valida';
+                    $valid_conditions = false;
+                    $error_message = 'Error: invalid email format';
                 } elseif(!$user->set_name($_POST['name'])){
-                    $condizioni_valide = false;
-                    $error_message = 'Errore: formato nome non valido';
+                    $valid_conditions = false;
+                    $error_message = 'Error: invalid name format';
                 } elseif(!$user->set_surname($_POST['surname'])){
-                    $condizioni_valide = false;
-                    $error_message = 'Errore: formato cognome non valido';
+                    $valid_conditions = false;
+                    $error_message = 'Error: invalid surname format';
                 } else {
-                    $user->user_save($file);
-                    $utente_salvato = true;
+                    $user->user_save($file_user);
+                    $user_saved = true;
                 }
             }
 
-            elseif($_GET['stato'] == 'login'){
-                $condizioni_valide = true;
-                $file = './databases/user.json';
-                $error_messages = [];
+            elseif($_GET['state'] == 'login'){
+                $valid_conditions = true;
                 if(!(isset($_POST['username']) && isset($_POST['password']))){
-                    $condizioni_valide = false;
-                    $error_message = 'Errore: controlla di aver inserito tutti i campi';
-                } elseif (!$user->username_exists($_POST['username'], $file)){
-                    $condizioni_valide = false;
-                    $error_message = 'Errore: username non esistente';
-                } elseif (!$user->check_login($_POST['username'], $_POST['password'], $file)) {
-                    $condizioni_valide = false;
-                    $error_message = 'Errore: password errata';
+                    $valid_conditions = false;
+                    $error_message = 'Error: check there is no empty field';
+                } elseif (!$user->username_exists($_POST['username'], $file_user)){
+                    $valid_conditions = false;
+                    $error_message = 'Error: username not found';
+                } elseif (!$user->check_login($_POST['username'], $_POST['password'], $file_user)) {
+                    $valid_conditions = false;
+                    $error_message = 'Error: incorrect password';
                 }
 
-                if ($condizioni_valide){
+                if ($valid_conditions){
                     $UserLogged = true;
-                    $utente_caricato = true;
+                    $user_loaded = true;
                 }
             }
         }
             
     ?>
     <main>
-        <?php if($_GET['stato'] == 'logout') : ?>
+        <?php if($_GET['state'] == 'logout') : ?>
             <div class='container'>
                 <h1>Log Out avvenuto con successo!</h1>
                 <p>Torna alla home oppure accedi con un altro utente</p>
@@ -93,29 +89,29 @@
                     session_destroy();
                 ?>
                 <a href="home.php">Torna alla home</a>
-                <a href="login.php?stato=login" class='accedi'>Accedi</a>
+                <a href="login.php?state=login" class='access'>Accedi</a>
             </div>
-        <?php elseif($UserLogged && !$utente_caricato && !$utente_salvato ) : ?>
+        <?php elseif($UserLogged && !$user_loaded && !$user_saved ) : ?>
             <div class='container'>
-                <h1>Hai già effettuato il Log In!</h1>
-                <p>Clicca in alto a destra se vuoi effettuare il Log Out per accedere con un altro utente</p>
+                <h1>User already logged!</h1>
+                <p>Go to the top right button to Logout and Login with another account</p>
             </div>
-        <?php elseif($utente_salvato) : ?>
+        <?php elseif($user_saved) : ?>
             <div class='container'>
                 <h1>Registrazione avvenuta con successo!</h1>
                 <p>Effettua il Log In per accedere al tuo account</p>
-                <a href="login.php?stato=login">Accedi</a>
+                <a href="login.php?state=login">Accedi</a>
             </div>
-        <?php elseif($utente_caricato) : ?>
+        <?php elseif($user_loaded) : ?>
             <div class='container'>
                 <h1>Log In avvenuto con successo!</h1>
                 <p>Benvenuto <?php echo $user->get_name(); ?></p>
                 <a href="home.php">Torna alla home</a>
             </div>
         <?php else: ?>
-            <?php if($_GET['stato'] == 'signup') : ?>
+            <?php if($_GET['state'] == 'signup') : ?>
                 <form action="" method="POST" class='container'>
-                    <h1>Registrati</h1>
+                    <h1>Registration</h1>
                     <label for="name">Nome * :</label>
                     <input type="text" name="name" id="name" value="<?php echo $_POST['name'] ??  ''; ?>" required>
                     <label for="surname">Cognome * :</label>
@@ -128,51 +124,51 @@
                     <input type="password" name="password" id="password" required>
                     <label for="confirm_password">Conferma Password * :</label>
                     <input type="password" name="confirm_password" id="confirm_password" required>
-                    <label for="data">Data di nascita : </label>
+                    <label for="date">Data di nascita : </label>
                     <div>
-                        <select name="giorno" id="data_giorno">
-                            <option value="0">Giorno</option>
+                        <select name="day" id="date_day">
+                            <option value="0">Day</option>
                             <?php for($i = 1; $i <= 31; $i++) : ?>
                                 <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                             <?php endfor; ?>
                         </select>
-                        <select name="mese" id="data_mese">
-                            <option value="0">Mese</option>
+                        <select name="month" id="date_month">
+                            <option value="0">Month</option>
                             <?php for($i = 1; $i <= 12; $i++) : ?>
                                 <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                             <?php endfor; ?>
                         </select>
-                        <select name="anno" id="data_anno">
-                            <option value="0">Anno</option>
+                        <select name="year" id="date_year">
+                            <option value="0">Year</option>
                             <?php for($i = date('Y'); $i >= 1900; $i--) : ?>
                                 <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                             <?php endfor; ?>
                         </select>
                     </div>
-                    <input type="submit" value="Registrati">
+                    <input type="submit" value="Sign Up">
                     <?php
                         if($error_message){
                             echo "<p class='errors'>$error_message</p>";
                         }
                     ?>
-                    <p>Hai già un account?</p>
-                    <a href="login.php?stato=login">Effettua il Loging</a>
+                    <p>Already have an account?</p>
+                    <a href="login.php?state=login">Login</a>
                 </form>
-            <?php elseif($_GET['stato'] == 'login') : ?>
+            <?php elseif($_GET['state'] == 'login') : ?>
                 <form action="" method='POST' class='container'>
-                    <h1>Accedi</h1>
+                    <h1>Login</h1>
                     <label for="username">Username :</label>
                     <input type="text" name="username" id="username" value="<?php echo $_POST['username'] ??  ''; ?>" required>
                     <label for="password">Password :</label>
                     <input type="password" name="password" id="password" required>
-                    <input type="submit" value="Accedi">
+                    <input type="submit" value="Login">
                     <?php
                         if($error_message){
                             echo "<p class='errors'>$error_message</p>";
                         }
                     ?>
-                    <p>Non hai un account?</p>
-                    <a href="login.php?stato=signup">Iscriviti</a>
+                    <p>Don't have an account?</p>
+                    <a href="login.php?state=signup">Sign Up</a>
                 </form>
             <?php endif; ?>
         <?php endif; ?>

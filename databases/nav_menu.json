@@ -32,14 +32,14 @@
         "name": "Sign Up",
         "type": "nav_to_sign",
         "title": "Go to ragistration page",
-        "url": "login.php?stato=signup"
+        "url": "login.php?state=signup"
     },
     {
         "id": 6,
         "name": "Login",
         "type": "nav_to_sign",
         "title": "Go to login page",
-        "url": "login.php?stato=login"
+        "url": "login.php?state=login"
     },
     {
         "id": 7,
