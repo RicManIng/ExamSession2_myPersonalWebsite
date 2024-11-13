@@ -13,7 +13,7 @@
                 <a href="https://www.linkedin.com/in/riccardo-mancinelli-9ab3341b2/" target="_blank" title='apri linkedin per contattarmi'><i class="fab fa-linkedin fa-2x"></i></a>
             </div>
         </div>
-        <div class="doveTrovarmi">
+        <div class="based_on">
             <h2>Based on</h2>
             <p>Via Parma 63 Poviglio(RE), Italy</p>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.9435735547213!2d10.526458076106833!3d44.843082471070616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47803d1a29487925%3A0xafc6ccfb91953621!2sVia%20Parma%2C%2063%2C%2042028%20Poviglio%20RE!5e0!3m2!1sit!2sit!4v1731174183657!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

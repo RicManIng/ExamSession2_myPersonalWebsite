@@ -1,7 +1,7 @@
 @import "configParam";
 @import "standard";
 
-/* start the standard stylink */
+/* start the standard style */
 header{
     height: 10vh;
     display: flex;
@@ -104,6 +104,7 @@ header{
         }
 
         /* styling of toggle button */
+        /* this part contain only the style of the button, for functionality  */
         .toggle-container {
             position: relative;
             width: 40px;
@@ -186,6 +187,12 @@ header{
         }
     } 
 
+    /*  nav bar styling for tablet and smartphone viewport
+        when I'm in a one of the before mentioned condition
+        nav bar must visualize hamburger and user icon instead of standard
+        navigation elements.
+        To access at the standard elements you must target one of the icon and
+        the menu will appear just under de nav bar viewport height */
     @media only screen and (max-width: 1024px), only screen and (min-resolution: 2dppx){
         .hamburger-open, .account-open{
             display: flex;
