@@ -1,3 +1,56 @@
 @import "configParam";
 @import "standard";
 
+main{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/electrician-1288717_1920.jpg');
+    background-size: cover;
+    background-position: center;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-blend-mode: overlay;
+    background-color: $home-main-bgColor;
+
+    .home-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+        max-width: 800px;
+        gap: 5vh;
+
+        @media only screen and (max-width: 768px), only screen and (min-resolution: 2dppx){
+            gap: 10vh;
+        }
+
+        h1, h2{
+            color: $header-txt-color-dark;
+            text-align: center;
+        }
+
+        h1{
+            font-size:5rem;
+        }
+
+        a{
+            padding: 20px;
+            border-radius: 10px;
+            background-color: $home-btn-bg-color;
+            color: $home-txt-color_light;
+            text-decoration: none;
+
+            &:hover{
+                background-color: $home-btn-bg-color-hover;
+                color: $home-txt-color_dark;
+            }
+        }
+
+        h1, h2, a{
+            font-family: Montserrat;
+        }
+    }
+}

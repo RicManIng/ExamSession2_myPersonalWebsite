@@ -32,3 +32,10 @@ $header-txt-color-hover-light: #070094;
 $header-txt-color-hover-dark: #3a57c3;
 
 $header-txt-font-size: 1.3rem;
+
+/* home page */
+$home-txt-color_light: $header_txt_color_light;
+$home-txt-color_dark: $header_txt_color_dark;
+$home-btn-bg-color: $header-login-dark;
+$home-btn-bg-color-hover: $header-login-hover-dark;
+$home-main-bgColor: rgba(0, 0, 94, 0.811);
