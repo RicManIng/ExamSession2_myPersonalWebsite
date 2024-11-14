@@ -5,7 +5,8 @@
         "start_date": "12-10-2022",
         "end_date": "actual",
         "description": "Zapi Group s.p.a is a company that designs and manufactures electronic systems for electric vehicles, such as forklifts, pallet trucks, and aerial work platforms. As a Test Engineer, I am responsible for testing the electronic systems developed by the company, including hardware and software. I work closely with the R&D team to ensure that the products meet the required specifications and quality standards.",
-        "link": "https://www.zapigroup.com/"
+        "link": "https://www.zapigroup.com/",
+        "logo": "resources/img/zapi-logo.png"
     },
     {
         "company": "K-Loops s.r.l",
@@ -13,7 +14,8 @@
         "start_date": "27-12-2021",
         "end_date": "16-08-2022",
         "description": "K-Loops s.r.l is a software development company that specializes in robotics solutions. As a Software Engineer, I was responsible for developing and mantaining company software products. I worked on Computer Vision with Python and on robot programming with KRL (KUKA Robot Language).",
-        "link": "https://www.k-loops.com/"
+        "link": "https://www.k-loops.com/",
+        "logo": "resources/img/kloo-logo.png"
     },
     {
         "company": "ElettroSoftware s.r.l",
@@ -21,6 +23,7 @@
         "start_date": "26-10-2021",
         "end_date": "04-12-2021",
         "description": "ElettroSoftware s.r.l is a software development company that specializes in industrial automation solutions. As a Software Engineer, I was responsible for developing and mantaining company software products. I worked on PLC programming with B&R Automation Studio.",
-        "link": "https://www.elettro-software.it/"
+        "link": "https://www.elettro-software.it/",
+        "logo": "resources/img/elettr-logo.png"
     }
 ]

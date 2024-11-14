@@ -8,7 +8,8 @@
         "end_date": "07-12-2022",
         "description": "The Master's Degree in Mechatronics Engineering is a two-year program that provides students with a solid foundation in the field of mechatronics, which combines mechanical, electrical, and computer engineering. The program includes courses in robotics, automation, control systems, and more. Students also have the opportunity to work on research projects and internships.",
         "website": "https://www.unimore.it/",
-        "evaluation" : "110 / 110 cum Laude"
+        "evaluation" : "110 / 110 cum Laude",
+        "logo" : "resources/img/logo-unimore.webp"
     },
     {
         "id": 2,
@@ -19,7 +20,8 @@
         "end_date": "12-10-2020",
         "description": "The Bachelor's Degree in Mechatronics Engineering is a three-year program that provides students with a solid foundation in the field of mechatronics, which combines mechanical, electrical, and computer engineering. The program includes courses in robotics, automation, control systems, and more. Students also have the opportunity to work on research projects and internships.",
         "website": "https://www.unimore.it/",
-        "evaluation" : "110 / 110 cum Laude"
+        "evaluation" : "110 / 110 cum Laude",
+        "logo" : "resources/img/logo-unimore.webp"
     },
     {
         "id": 3,
@@ -30,7 +32,8 @@
         "end_date": "01-07-2017",
         "description": "The High School Technical Diploma in Mechanics and Mechatronics is a five-year program that provides students with a solid foundation in the field of mechanics and mechatronics. The program includes courses in mechanics, electronics, automation, and more. Students also have the opportunity to work on projects and internships.",
         "website": "https://www.istitutomontani.edu.it/web/",
-        "evaluation" : "100 / 100"
+        "evaluation" : "100 / 100",
+        "logo" : "resources/img/download.jfif"
     },
     {
         "id": 4,
@@ -41,6 +44,7 @@
         "end_date": "26-07-2025",
         "description": "The Web Development Master Program is a one-year program that provides students with a solid foundation in web development. The program includes courses in HTML, CSS, JavaScript, SASS, PHP, and more. Students also have the opportunity to work on projects.",
         "website": "https://accademiacode.com/",
-        "evaluation" : "N/A"
+        "evaluation" : "N/A",
+        "logo" : "resources/img/download.png"
     }
 ]
