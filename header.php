@@ -14,7 +14,7 @@
             <?php if($UserLogged): ?>
                 <!-- if user is logged show the full menu -->
                 <?php foreach($nav_array as $nav): ?>
-                    <?php if($nav['type'] == 'nav' || $nav['type'] == 'nav-signed' && $nav['id'] < 5): ?>
+                    <?php if(($nav['type'] == 'nav' || $nav['type'] == 'nav-signed') && $nav['id'] < 5): ?>
                         <?php if(isset($_GET['selected']) && $_GET['selected'] == $nav['id']): ?>
                             <li><a href="<?php echo $nav['url']; ?>" class="selected"><?php echo $nav['name']; ?></a></li>
                         <?php else: ?>
@@ -59,7 +59,7 @@
             <?php if($UserLogged): ?>
                 <!-- if user is logged show the sign out button -->
                 <?php foreach($nav_array as $nav): ?>
-                    <?php if($nav['type'] == 'nav' || $nav['type'] == 'nav-signed' && $nav['id'] >= 5): ?>
+                    <?php if(($nav['type'] == 'nav' || $nav['type'] == 'nav-signed') && $nav['id'] >= 5): ?>
                         <li><a href="<?php echo $nav['url']; ?>" class="logout"><?php echo $nav['name']; ?></a></li>
                     <?php endif; ?>
                 <?php endforeach; ?>

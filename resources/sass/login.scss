@@ -24,11 +24,27 @@ main {
         margin: 10vh 0px;
         border: 1px solid $header-background-color-dark;
 
+        @media only screen and (max-width: 1024px), only screen and (min-resolution: 2dppx){
+            gap: 2vh;
+            max-width: none;
+            padding: 40px;
+            border-radius: 20px;
+
+            label, input, select{
+                font-size: 2rem;
+            }
+        }
+
         input, select{
             padding: 10px;
             border: none;
             border-radius: 5px;
             background-color: $login-element-bg-color;
+
+            @media only screen and (max-width: 1024px), only screen and (min-resolution: 2dppx){
+                padding: 30px;
+                border-radius: 15px;
+            }
         }
 
         input:focus, select:focus {
@@ -48,6 +64,10 @@ main {
             &:hover{
                 color: $header-login-txt-color-light;
                 background-color: $header-login-hover-dark;
+            }
+
+            @media only screen and (max-width: 1024px), only screen and (min-resolution: 2dppx){
+                font-size: 2rem;
             }
         }
 
@@ -72,6 +92,11 @@ main {
                 color: $header-login-txt-color-light;
                 background-color: $header-login-hover-dark;
             }
+
+            @media only screen and (max-width: 1024px), only screen and (min-resolution: 2dppx){
+                padding: 30px;
+                border-radius: 15px;
+            }
         }
 
         .errors{
@@ -88,6 +113,10 @@ main {
                 background-color: $header-login-hover-light;
                 color: $header-login-txt-color-light;
             }
+        }
+
+        select{
+            appearance: none;
         }
     }
 }

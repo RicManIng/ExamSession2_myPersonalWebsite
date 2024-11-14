@@ -99,6 +99,18 @@ header{
             }
         }
 
+        .logout{
+            background-color: $header-logout-light;
+            padding: 15px;
+            border-radius: 10px;
+            color: $header-logout-txt-color-light;
+
+            &:hover{
+                background-color: $header-logout-dark;
+                color: $header-logout-txt-color-dark;
+            }
+        }
+
         ul{
             gap: 20px;
         }

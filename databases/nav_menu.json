@@ -46,7 +46,7 @@
         "name": "Logout",
         "type": "nav-signed",
         "icon": "fas fa-sign-out-alt",
-        "url": "sign_out.php"
+        "url": "login.php?state=logout"
     },
     {
         "id": 8,

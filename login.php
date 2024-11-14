@@ -4,7 +4,7 @@
     <?php
         require_once('head.php');
     ?>
-    <title>Centro Sportivo Home</title> 
+    <title>Riccardo Mancinelli Engineering</title> 
     <link rel="stylesheet" href="resources/css/login.min.css">
 </head>
 <body>
@@ -88,7 +88,7 @@
                     $_SESSION = array();
                     session_destroy();
                 ?>
-                <a href="home.php">Torna alla home</a>
+                <a href="what_about?state=1.php">Torna alla home</a>
                 <a href="login.php?state=login" class='access'>Accedi</a>
             </div>
         <?php elseif($UserLogged && !$user_loaded && !$user_saved ) : ?>
@@ -112,9 +112,9 @@
             <?php if($_GET['state'] == 'signup') : ?>
                 <form action="" method="POST" class='container'>
                     <h1>Registration</h1>
-                    <label for="name">Nome * :</label>
+                    <label for="name">Name * :</label>
                     <input type="text" name="name" id="name" value="<?php echo $_POST['name'] ??  ''; ?>" required placeholder="insert your name">
-                    <label for="surname">Cognome * :</label>
+                    <label for="surname">Surname * :</label>
                     <input type="text" name="surname" id="surname" value="<?php echo $_POST['surname'] ??  ''; ?>" required placeholder="insert your surname">
                     <label for="username">Username * : </label>
                     <input type="text" name="username" id="username" value="<?php echo $_POST['username'] ??  ''; ?>" required placeholder="insert your username">
@@ -122,9 +122,9 @@
                     <input type="email" name="email" id="email" value="<?php echo $_POST['email'] ??  ''; ?>" required placeholder="insert your email">
                     <label for="password">Password * :</label>
                     <input type="password" name="password" id="password" required placeholder="insert your password">
-                    <label for="confirm_password">Conferma Password * :</label>
+                    <label for="confirm_password">Confirm Password * :</label>
                     <input type="password" name="confirm_password" id="confirm_password" required placeholder="confirm your password">
-                    <label for="date">Data di nascita : </label>
+                    <label for="date">Birth date : </label>
                     <div>
                         <select name="day" id="date_day">
                             <option value="0">Day</option>
