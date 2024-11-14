@@ -39,14 +39,14 @@
     <nav class="right-nav" id="right-nav">
         <!-- insert here the toggle button for light/dark mode -->
         <!-- This toggle button is currently not working; its functionality will be introduced later with the use of JavaScript.  -->
-        <div class="toggle-container" id="toggle">
+        <!-- <div class="toggle-container" id="toggle">
             <a href="#toggle" class="toggle-link open">
                 <div class="toggle"></div>
             </a>
             <a href="#" class="toggle-link close">
                 <div class="toggle"></div>
             </a>
-        </div>
+        </div> -->
         <?php foreach($nav_array as $nav): ?>
             <!-- in phone viewport show the user icon to access at registration/login/signout buttons -->
             <?php if($nav['type'] == 'nav-account-icon'): ?>
