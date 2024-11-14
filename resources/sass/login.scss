@@ -17,33 +17,42 @@ main {
         width: 80%;
         max-width: 600px;
         flex-direction: column;
-        background-color: $header-background-color-light;
+        background-color: $header-background-color-dark;
         padding: 20px;
         border-radius: 10px;
         gap: 20px;
         margin: 10vh 0px;
+        border: 1px solid $header-background-color-dark;
 
         input, select{
             padding: 10px;
             border: none;
             border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: $login-element-bg-color;
+        }
+
+        input:focus, select:focus {
+            background-color: $login-element-bg-color-focus; 
+        }
+
+        input:not(:placeholder-shown), select:not(:placeholder-shown) {
+            background-color: $login-element-bg-color-compiled; 
         }
 
         input[type="submit"]{
-            background-color: $header-login-light;
-            color: black;
+            background-color: $header-login-dark;
+            color: $header-login-txt-color-dark;
             cursor: pointer;
             font-size: 1rem;
 
             &:hover{
-                color: white;
-                background-color: $header-login-hover-light;
+                color: $header-login-txt-color-light;
+                background-color: $header-login-hover-dark;
             }
         }
 
         h1, label, p{
-            color: white;
+            color: $header-txt-color-dark;
         }
 
         h1, p {
@@ -55,13 +64,13 @@ main {
             padding: 10px;
             border: none;
             border-radius: 5px;
-            background-color: $header-login-light;
+            background-color: $header-login-dark;
             text-decoration: none;
-            color: black;
+            color: $header-login-txt-color-dark;
 
             &:hover{
-                color: white;
-                background-color: $header-login-hover-light;
+                color: $header-login-txt-color-light;
+                background-color: $header-login-hover-dark;
             }
         }
 
@@ -74,10 +83,10 @@ main {
 
         .access{
             background-color: $header-login-light;
-            color: black;
+            color: $header-login-txt-color-dark;
             &:hover{
                 background-color: $header-login-hover-light;
-                color: white;
+                color: $header-login-txt-color-light;
             }
         }
     }

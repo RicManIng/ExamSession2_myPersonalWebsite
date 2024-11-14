@@ -9,7 +9,6 @@
         protected $name = null;
         protected $surname = null;
         protected $birthDate = [];
-        protected $company = null;
 
         public function set_username($value){
             $temp = htmlspecialchars(trim($value));
@@ -27,6 +26,9 @@
 
         public function username_exists($value, $file){
             $UserDatabase = json_decode(file_get_contents($file), true);
+            if(empty($UserDatabase)){
+                return 0;
+            }
             foreach ($UserDatabase as $key => $user) {
                 if($user['username'] == $value){
                     return 1;
@@ -64,6 +66,9 @@
 
         public function email_exists($value, $file){
             $UserDatabase = json_decode(file_get_contents($file), true);
+            if(empty($UserDatabase)){
+                return 0;
+            }
             foreach ($UserDatabase as $key => $user) {
                 if($user['email'] == $value){
                     return 1;
@@ -118,36 +123,27 @@
             return $this->birthDate;
         }
 
-        public function set_company($value){
-            $temp = htmlspecialchars(trim($value));
-            if (is_string($temp) && strlen($temp) <= 50){
-                $this->company = $temp;
-                return 1;
-            } else {
-                return 0;
-            }
-        }
-
-        public function get_company(){
-            return $this->company;
-        }
-
         public function user_save($file){
             $UserDatabase = json_decode(file_get_contents($file), true);
+            if ($UserDatabase === null) {
+                $UserDatabase = [];
+            }
             $user_found = false;
-            foreach ($UserDatabase as $key => $user) {
-                if($user['username'] == $this->username){
-                    $UserDatabase[$key] = ['username' => $this->username, 'password' => $this->password, 'email' => $this->email, 'name' => $this->name, 'surname' => $this->surname, 'birthDate' => $this->birthDate, 'company' => $this->company];
-                    $user_found = true;
+            if(!empty($UserDatabase)){
+                foreach ($UserDatabase as $key => $user) {
+                    if($user['username'] == $this->username){
+                        $UserDatabase[$key] = ['username' => $this->username, 'password' => $this->password, 'email' => $this->email, 'name' => $this->name, 'surname' => $this->surname, 'birthDate' => $this->birthDate];
+                        $user_found = true;
+                    }
                 }
             }
             if(!$user_found){
-                array_push($UserDatabase, ['username' => $this->username, 'password' => $this->password, 'email' => $this->email, 'name' => $this->name, 'surname' => $this->surname, 'birthDate' => $this->birthDate, 'company' => $this->company]);
+                array_push($UserDatabase, ['username' => $this->username, 'password' => $this->password, 'email' => $this->email, 'name' => $this->name, 'surname' => $this->surname, 'birthDate' => $this->birthDate]);
             }
             file_put_contents($file, json_encode($UserDatabase));
         }
 
-        public function check_login($username, $password, $file_user, $file_team){
+        public function check_login($username, $password, $file_user){
             $UserDatabase = json_decode(file_get_contents($file_user), true);
             foreach ($UserDatabase as $key => $user) {
                 if($user['username'] == $username && $user['password'] == $password){
@@ -157,7 +153,6 @@
                     $this->set_name($user['name']);
                     $this->set_surname($user['surname']);
                     $this->set_birthDate($user['birthDate']['day'], $user['birthDate']['month'], $user['birthDate']['year']);
-                    $this->set_company($user['company']);
                     return 1;
                 }
             }

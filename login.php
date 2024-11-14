@@ -106,24 +106,24 @@
             <div class='container'>
                 <h1>Log In avvenuto con successo!</h1>
                 <p>Benvenuto <?php echo $user->get_name(); ?></p>
-                <a href="home.php">Torna alla home</a>
+                <a href="what_about.php?selected=1">Torna alla home</a>
             </div>
         <?php else: ?>
             <?php if($_GET['state'] == 'signup') : ?>
                 <form action="" method="POST" class='container'>
                     <h1>Registration</h1>
                     <label for="name">Nome * :</label>
-                    <input type="text" name="name" id="name" value="<?php echo $_POST['name'] ??  ''; ?>" required>
+                    <input type="text" name="name" id="name" value="<?php echo $_POST['name'] ??  ''; ?>" required placeholder="insert your name">
                     <label for="surname">Cognome * :</label>
-                    <input type="text" name="surname" id="surname" value="<?php echo $_POST['surname'] ??  ''; ?>" required>
+                    <input type="text" name="surname" id="surname" value="<?php echo $_POST['surname'] ??  ''; ?>" required placeholder="insert your surname">
                     <label for="username">Username * : </label>
-                    <input type="text" name="username" id="username" value="<?php echo $_POST['username'] ??  ''; ?>" required>
+                    <input type="text" name="username" id="username" value="<?php echo $_POST['username'] ??  ''; ?>" required placeholder="insert your username">
                     <label for="email">Email * :</label>
-                    <input type="email" name="email" id="email" value="<?php echo $_POST['email'] ??  ''; ?>" required>
+                    <input type="email" name="email" id="email" value="<?php echo $_POST['email'] ??  ''; ?>" required placeholder="insert your email">
                     <label for="password">Password * :</label>
-                    <input type="password" name="password" id="password" required>
+                    <input type="password" name="password" id="password" required placeholder="insert your password">
                     <label for="confirm_password">Conferma Password * :</label>
-                    <input type="password" name="confirm_password" id="confirm_password" required>
+                    <input type="password" name="confirm_password" id="confirm_password" required placeholder="confirm your password">
                     <label for="date">Data di nascita : </label>
                     <div>
                         <select name="day" id="date_day">
@@ -158,9 +158,9 @@
                 <form action="" method='POST' class='container'>
                     <h1>Login</h1>
                     <label for="username">Username :</label>
-                    <input type="text" name="username" id="username" value="<?php echo $_POST['username'] ??  ''; ?>" required>
+                    <input type="text" name="username" id="username" value="<?php echo $_POST['username'] ??  ''; ?>" required placeholder="insert your username">
                     <label for="password">Password :</label>
-                    <input type="password" name="password" id="password" required>
+                    <input type="password" name="password" id="password" required placeholder="insert your password">
                     <input type="submit" value="Login">
                     <?php
                         if($error_message){
