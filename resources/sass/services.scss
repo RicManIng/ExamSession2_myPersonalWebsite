@@ -1,0 +1,53 @@
+@import "configParam";
+@import "standard";
+
+section{
+    width: 100%;
+    min-height: 90vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container{
+        width: 90%;
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5vh;
+        margin: 10vh 0px;
+    }
+
+    h1, .centered{
+        width: 100%;
+        text-align: center;
+    }
+
+    h1, p, a, ul li{
+        color: $header-txt-color-dark;
+    }
+
+    ul{
+        margin-left: 1.5vw;
+    }
+
+    @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+        ul li{
+            font-size: 2rem;
+        }
+    }
+}
+
+.embedded{
+    background-image: url('../img/pexels-padrinan-3520679.jpg');
+    background-color: rgba(24, 24, 24, 0.90);
+}
+
+.web{
+    background-image: url('../img/code-1076536_1920.jpg');
+    background-color: rgba(0, 0, 61, 0.90);
+}
