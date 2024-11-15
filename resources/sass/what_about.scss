@@ -14,12 +14,18 @@ section{
     border-bottom: 1px solid $header-txt-color-light;
 }
 
+/* styling first section */
+
 .about-me{
     .mia-foto{
         float: left;
         width: 400px;
         margin: 0px 40px 40px 40px;
         border-radius: 30px;
+
+        @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+            width: 80%;
+        }
     }
 
     div{
@@ -30,9 +36,16 @@ section{
         h1{
             text-align: center;
         }
+    }
 
+    @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
+
+/* styling second section */
 
 .studies{
     display: flex;
@@ -48,8 +61,16 @@ section{
         align-items: center;
         gap: 3vh;
 
+        @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+            flex-direction: column;
+        }
+
         img{
             width: 200px;
+
+            @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+                width: 80%;
+            }
         }
         .container-studies-intern{
             display: flex;
@@ -67,11 +88,30 @@ section{
                 a{
                     text-decoration: none;
                 }
+
+                @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+                    flex-direction: column;
+                    gap: 2vh;
+                    align-items: flex-start;
+                }
+
+                @media (max-width: 1500px) and (min-resolution: 2dppx){
+                    p, a {
+                        font-size: 3rem;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+            h3{
+                text-align: center;
             }
         }
     }
 }
 
+/* styling third section */
 
 .work-experiences{
     display: flex;
@@ -88,8 +128,16 @@ section{
         align-items: center;
         gap: 3vh;
 
+        @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+            flex-direction: column;
+        }
+
         img{
             width: 200px;
+
+            @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+                width: 80%;
+            }
         }
         .container-work-intern{
             display: flex;
@@ -107,6 +155,24 @@ section{
                 a{
                     text-decoration: none;
                 }
+
+                @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+                    flex-direction: column;
+                    gap: 2vh;
+                    align-items: flex-start;
+                }
+
+                @media (max-width: 1500px) and (min-resolution: 2dppx){
+                    p, a {
+                        font-size: 3rem;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+            h3{
+                text-align: center;
             }
         }
     }
