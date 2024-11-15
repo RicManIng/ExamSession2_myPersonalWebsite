@@ -1,0 +1,96 @@
+@import "configParam";
+@import "standard";
+
+main{
+    background-color: $standard-white;
+    display: flex;
+    min-height: 90vh;
+
+    @media only screen and (max-width: 1024px), only screen and (min-resolution: 2dppx){
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;
+        gap: 5vh;
+        padding: 5vh 0px;
+    }
+
+    .img-container{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media only screen and (max-width: 1024px), only screen and (min-resolution: 2dppx){
+            width: 100%;
+        }
+
+        img{
+            width: 80%;
+            border-radius: 20px;
+        }
+    }
+
+    .content{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 0px 40px;
+        gap: 5vh;
+
+        @media only screen and (max-width: 1024px), only screen and (min-resolution: 2dppx){
+            width: 90%;
+
+            li{
+                font-size: 2rem;
+            }
+        }
+
+
+        h1, p, li{
+            color: $header-txt-color-light;
+        }
+
+        h1{
+            width: 100%;
+            text-align: center;
+        }
+
+        .date-content{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .technologies-content{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            ul{
+                margin-left: 2vw;
+            }
+        }
+
+        .link-container{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+
+            a{
+                padding:20px;
+                background-color: $header-background-color-dark;
+                color: $header-txt-color-dark;
+                text-decoration: none;
+                border-radius: 15px;
+
+                &:hover{
+                    background-color: $header-login-hover-dark;
+                    color: $header-txt-color-light;
+                }
+            }
+        }
+    }
+}

@@ -9,7 +9,7 @@
         "technologies" : ["C", "Microchip PIC32", "CAN Bus", "FreeRTOS", "Touchscreen Display", "Embedded Systems"],
         "long_description": "The system is designed to control a test bench that is used to test hardware.\nThe system is designed to have concurrency tasks with different priorities.\nIn detail:\nTask 1 : execution of CAN messages cycle (max priority)\nTask 2 : control of Device Under Test (DUT) status\nTask 3 : control of support devices status\nTask 4 : control of environment status\nTask 5 : refresh of touchscreen display",
         "image_url": "resources/img/pic32-maxi-web-removebg-preview.png",
-        "github_url": "none",
+        "repo_url": "none",
         "client": "Zapi s.p.a"
     },
     {
@@ -22,7 +22,7 @@
         "technologies" : ["Raspberry", "Python", "OOP", "Multithreading and multiprocessing", "Embedded Systems"],
         "long_description": "The system is designed to control a test bench that is used to test hardware.\nThe system is designed to have concurrency parallel tasks.\nSome explaination:\nSend and receive CAN message functions have one free core to be processed\nChecking digital and analog signal status functions has one free process to be executed\nUser interface to execute test and change inputs has one free process to be executed",
         "image_url": "resources/img/pexels-mathias-wouters-115341282-10635975.jpg",
-        "github_url": "none",
+        "repo_url": "none",
         "client": "Zapi s.p.a"
     },
     {
@@ -35,7 +35,7 @@
         "technologies" : ["HTML", "CSS"],
         "long_description": "This is my first personal website. It is a static website with some information about me and my projects.",
         "image_url": "resources/img/Website_old.png",
-        "github_url": "https://github.com/RicManIng/MyPersonalWebsite-FinalExam_HTML-CSS.git",
+        "repo_url": "https://github.com/RicManIng/MyPersonalWebsite-FinalExam_HTML-CSS.git",
         "client": "Myself"
     },
     {
@@ -48,7 +48,7 @@
         "technologies" : ["HTML", "CSS", "PHP", "SASS"],
         "long_description": "This is a website for a football club that organize a tournament. The website has a registration form for the tournament and a page with the tournament schedule.",
         "image_url": "resources/img/FootLab.png",
-        "github_url": "https://github.com/RicManIng/FootLab_AS.git",
+        "repo_url": "https://github.com/RicManIng/FootLab_AS.git",
         "client": "Myself"
     },
     {
@@ -61,7 +61,7 @@
         "technologies" : ["HTML", "CSS", "PHP", "SASS"],
         "long_description": "This is a website for a company that offers a service of sharing reviews of books. The website has a registration form for the users and a page with the reviews of the books.",
         "image_url": "resources/img/ReadSpace.png",
-        "github_url": "https://github.com/RicManIng/ReadSpace_srl.git",
+        "repo_url": "https://github.com/RicManIng/ReadSpace_srl.git",
         "client": "Myself"
     },
     {
@@ -74,7 +74,7 @@
         "technologies" : ["Python", "KUKA - KRL", "Open3D", "OpenCV", "OOP", "Depth Camera", "Point Cloud", "IntelRealSense"],
         "long_description": "A vision system for an industrial robot to perform pick and place operations. The system is designed to detect the object to be picked and the position where the object has to be placed. Then move the robot to pick the object and place it in the desired position.",
         "image_url": "resources/img/visionsystem.avif",
-        "github_url": "https://github.com/RicManIng/ReadSpace_srl.git",
+        "repo_url": "none",
         "client": "K-Loops s.r.l"
     },
     {
@@ -87,7 +87,7 @@
         "technologies" : ["STM32 - STM32CubeIDE", "C", "Embedded Systems", "Stepper Motor - Motion Control"],
         "long_description": "A domotic system to control the house. The system is designed to control the lights, the windows, the heating system, the air conditioning system, the mailbox for doorbell",
         "image_url": "resources/img/DomoticHouse.webp",
-        "github_url": "",
+        "repo_url": "none",
         "client": "Myself"
     },
     {
@@ -100,7 +100,7 @@
         "technologies" : ["RobotStudio", "ABB - RAPID", "SolidWorks"],
         "long_description": "An automatic production line with industrial robots. The system is designed to move the objects from one station to another station. The system is designed to have multiple robots that perform operation on product and picks the object from the conveyor belt and place it in the desired position.",
         "image_url": "resources/img/RobotStudio.webp",
-        "github_url": "",
+        "repo_url": "none",
         "client": "Myself"
     },
     {
@@ -113,24 +113,7 @@
         "technologies" : ["B&R - Automation Studio", "PLC"],
         "long_description": "An automatic machine for regulating the tiles painting. The system is designed to regulate the flux of painting on the tiles. The system is designed to have multiple sensors that detect the position of the tiles and the chosen pattern to apply. The system check if there is an operator in proximity of the machine and stop working if there is a danger condition.",
         "image_url": "resources/img/Ceramic-Machine-removebg-preview.png",
-        "github_url": "",
+        "repo_url": "none",
         "client": "ElettroSoftware s.r.l"
-    },
-    {
-        "id": 10,
-        "name": "Dummy",
-        "description": "dummy",
-        "status": "active",
-        "image_url": "resources/img/",
-        "client": "dummy"
-    },
-    {
-        "id": 11,
-        "name": "To Do",
-        "description": "dummy",
-        "status": "to do",
-        "image_url": "resources/img/",
-        "client": "dummy"
-
     }
 ]

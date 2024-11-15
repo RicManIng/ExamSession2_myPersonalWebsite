@@ -20,7 +20,7 @@
                 <?php if ($project['status'] == 'finished'): ?>  
                     <div class='project'>
                         <div class="img-container">
-                            <img src="<?= $project['image_url']; ?>" alt="immagine-progetto">
+                            <img src="<?= $project['image_url']; ?>" alt="project-image">
                         </div>
                         <p><strong><?= $project['name']; ?></strong></p>
                         <p><?= $project['client']; ?></p>
@@ -40,7 +40,7 @@
                         <?php $project_present = true; ?>
                         <div class='project'>
                             <div class="img-container">
-                                <img src="<?= $project['image_url']; ?>" alt="immagine-progetto">
+                                <img src="<?= $project['image_url']; ?>" alt="project-image">
                             </div>
                             <p><strong><?= $project['name']; ?></strong></p>
                             <p><?= $project['client']; ?></p>
@@ -63,7 +63,7 @@
                         <?php $project_present = true; ?>
                         <div class='project'>
                             <div class="img-container">
-                                <img src="<?= $project['image_url']; ?>" alt="immagine-progetto">
+                                <img src="<?= $project['image_url']; ?>" alt="project-image">
                             </div>
                             <p><strong><?= $project['name']; ?></strong></p>
                             <p><?= $project['client']; ?></p>
