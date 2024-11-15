@@ -16,9 +16,17 @@ section{
     align-items: center;
     gap: 5vh;
 
+    @media (max-width: 1500px) and (min-resolution: 2dppx){
+        padding: 5vh 0px;
+    }
+
     h1{
         text-align: center;
         margin-bottom: 5vh;
+
+        @media (max-width: 1500px) and (min-resolution: 2dppx){
+            margin-bottom: 0px;
+        }
     }
 
     .project{
