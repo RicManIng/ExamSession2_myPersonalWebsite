@@ -1,0 +1,119 @@
+@import "configParam";
+@import "standard";
+
+main{
+    background-color: $standard-white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section{
+    width: 90%;
+    padding: 10vh 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+
+    @media (max-width: 1500px) and (min-resolution: 2dppx){
+        padding: 5vh 0px;
+    }
+
+    h1{
+        text-align: center;
+        margin-bottom: 5vh;
+
+        @media (max-width: 1500px) and (min-resolution: 2dppx){
+            margin-bottom: 0px;
+        }
+    }
+
+    .project{
+        display: flex;
+        justify-content: space-between;
+        height: 20vh;
+        width: 100%;
+        align-items: center;
+        padding: 20px;
+        border: 2px solid $header-background-color-dark;
+        border-radius: 20px;
+        box-shadow: 2px 2px $footer-background-color;
+        position: relative;
+        top: 0px;
+        left: 0px;
+
+        @media (max-width: 1500px) and (min-resolution: 2dppx){
+            flex-direction: column;
+            height: 40vh;
+            box-shadow: 4px 4px $footer-background-color;
+        }
+
+        &:hover{
+            top: 2px;
+            left: 2px;
+            box-shadow: none;
+
+            @media (max-width: 1500px) and (min-resolution: 2dppx){
+                top: 4px;
+                left: 4px;
+            }
+        }
+
+        .img-container{
+            height: 100%;
+            width: 30%;
+            display: flex;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                height: 100%;
+                border-radius: 10px;
+            }
+
+            @media (max-width: 1500px) and (min-resolution: 2dppx){
+                height: 50%;
+                width: 100%;
+            }
+        }
+
+        p{
+            width: 30%;
+            color: $header-txt-color-light;
+
+            @media (max-width: 1500px) and (min-resolution: 2dppx){
+                width: 100%;
+            }
+        }
+
+        p, a{
+            text-align: center;
+        }
+
+        .link-container{
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media (max-width: 1500px) and (min-resolution: 2dppx){
+                width: 100%;
+            }
+
+            a{
+                text-decoration: none;
+                color: $header-txt-color-dark;
+                padding: 20px;
+                border-radius: 10px;
+                background-color: $header-background-color-dark;
+
+                &:hover{
+                    background-color: $header-login-hover-dark;
+                    color: $header-txt-color-light;
+                }
+            }
+        }
+    }
+}
