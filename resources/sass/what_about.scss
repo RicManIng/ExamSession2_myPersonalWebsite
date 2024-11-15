@@ -1,0 +1,179 @@
+@import "configParam";
+@import "standard";
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $standard-white;
+}
+
+section{
+    width: 90%;
+    padding: 10vh 0px;
+    border-bottom: 1px solid $header-txt-color-light;
+}
+
+/* styling first section */
+
+.about-me{
+    .mia-foto{
+        float: left;
+        width: 400px;
+        margin: 0px 40px 40px 40px;
+        border-radius: 30px;
+
+        @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+            width: 80%;
+        }
+    }
+
+    div{
+        h1, p{
+            margin-bottom: 5vh;
+            color: $header-txt-color-light;
+        }
+        h1{
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* styling second section */
+
+.studies{
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+    h1{
+        margin-bottom: 5vh;
+        color: $header-txt-color-light;
+        text-align: center;
+    }
+    .container-studies-extern{
+        display: flex;
+        align-items: center;
+        gap: 3vh;
+
+        @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+            flex-direction: column;
+        }
+
+        img{
+            width: 200px;
+
+            @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+                width: 80%;
+            }
+        }
+        .container-studies-intern{
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+            h3, p{
+                color: $header-txt-color-light;
+            }
+            div{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 10vw;
+
+                a{
+                    text-decoration: none;
+                }
+
+                @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+                    flex-direction: column;
+                    gap: 2vh;
+                    align-items: flex-start;
+                }
+
+                @media (max-width: 1500px) and (min-resolution: 2dppx){
+                    p, a {
+                        font-size: 3rem;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+            h3{
+                text-align: center;
+            }
+        }
+    }
+}
+
+/* styling third section */
+
+.work-experiences{
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+    border: none;
+    h1{
+        margin-bottom: 5vh;
+        color: $header-txt-color-light;
+        text-align: center;
+    }
+    .container-work-extern{
+        display: flex;
+        align-items: center;
+        gap: 3vh;
+
+        @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+            flex-direction: column;
+        }
+
+        img{
+            width: 200px;
+
+            @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+                width: 80%;
+            }
+        }
+        .container-work-intern{
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+            h3, p{
+                color: $header-txt-color-light;
+            }
+            div{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 10vw;
+
+                a{
+                    text-decoration: none;
+                }
+
+                @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+                    flex-direction: column;
+                    gap: 2vh;
+                    align-items: flex-start;
+                }
+
+                @media (max-width: 1500px) and (min-resolution: 2dppx){
+                    p, a {
+                        font-size: 3rem;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 1024px), only screen and (min-resolution: 2dppx){
+            h3{
+                text-align: center;
+            }
+        }
+    }
+}
