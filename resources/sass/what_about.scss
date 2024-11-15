@@ -1,0 +1,113 @@
+@import "configParam";
+@import "standard";
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $standard-white;
+}
+
+section{
+    width: 90%;
+    padding: 10vh 0px;
+    border-bottom: 1px solid $header-txt-color-light;
+}
+
+.about-me{
+    .mia-foto{
+        float: left;
+        width: 400px;
+        margin: 0px 40px 40px 40px;
+        border-radius: 30px;
+    }
+
+    div{
+        h1, p{
+            margin-bottom: 5vh;
+            color: $header-txt-color-light;
+        }
+        h1{
+            text-align: center;
+        }
+
+    }
+}
+
+.studies{
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+    h1{
+        margin-bottom: 5vh;
+        color: $header-txt-color-light;
+        text-align: center;
+    }
+    .container-studies-extern{
+        display: flex;
+        align-items: center;
+        gap: 3vh;
+
+        img{
+            width: 200px;
+        }
+        .container-studies-intern{
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+            h3, p{
+                color: $header-txt-color-light;
+            }
+            div{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 10vw;
+
+                a{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+
+.work-experiences{
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+    border: none;
+    h1{
+        margin-bottom: 5vh;
+        color: $header-txt-color-light;
+        text-align: center;
+    }
+    .container-work-extern{
+        display: flex;
+        align-items: center;
+        gap: 3vh;
+
+        img{
+            width: 200px;
+        }
+        .container-work-intern{
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+            h3, p{
+                color: $header-txt-color-light;
+            }
+            div{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 10vw;
+
+                a{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

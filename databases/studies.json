@@ -33,7 +33,7 @@
         "description": "The High School Technical Diploma in Mechanics and Mechatronics is a five-year program that provides students with a solid foundation in the field of mechanics and mechatronics. The program includes courses in mechanics, electronics, automation, and more. Students also have the opportunity to work on projects and internships.",
         "website": "https://www.istitutomontani.edu.it/web/",
         "evaluation" : "100 / 100",
-        "logo" : "resources/img/download.jfif"
+        "logo" : "resources/img/montani-removebg-preview.png"
     },
     {
         "id": 4,
@@ -45,6 +45,6 @@
         "description": "The Web Development Master Program is a one-year program that provides students with a solid foundation in web development. The program includes courses in HTML, CSS, JavaScript, SASS, PHP, and more. Students also have the opportunity to work on projects.",
         "website": "https://accademiacode.com/",
         "evaluation" : "N/A",
-        "logo" : "resources/img/download.png"
+        "logo" : "resources/img/code-removebg-preview.png"
     }
 ]
