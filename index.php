@@ -17,7 +17,7 @@
         <div class="home-container">
             <h1>Web and IoT Innovation for Your Business Future</h1>
             <h2>From web development to embedded systems, we take your business to the next level.</h2>
-            <a href="what_about.php?selected=1">See more information</a>
+            <a href="what_about.php?selected=1" title="Go to About Page">See more information</a>
         </div>
     </main>
     <?php

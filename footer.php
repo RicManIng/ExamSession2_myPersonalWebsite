@@ -8,9 +8,9 @@
             <p>riccardo.mancinelli@cherrybytes.it</p>
             <h2 class='social'>Social</h2>
             <div>
-                <a href="https://wa.me/3491011109" target="_blank" title='apri whatsapp per contattarmi'><i class="fab fa-whatsapp fa-2x"></i></a>
-                <a href="https://www.instagram.com/mancinelli.riccardo13/" target="_blank" title='apri instagram per contattarmi'><i class="fab fa-instagram fa-2x"></i></a>
-                <a href="https://www.linkedin.com/in/riccardo-mancinelli-9ab3341b2/" target="_blank" title='apri linkedin per contattarmi'><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://wa.me/3491011109" target="_blank" title='Open whatsapp and contact me'><i class="fab fa-whatsapp fa-2x"></i></a>
+                <a href="https://www.instagram.com/mancinelli.riccardo13/" target="_blank" title='Open instagram and contact me'><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/riccardo-mancinelli-9ab3341b2/" target="_blank" title='Open linkedin and contact me'><i class="fab fa-linkedin fa-2x"></i></a>
             </div>
         </div>
         <div class="based_on">

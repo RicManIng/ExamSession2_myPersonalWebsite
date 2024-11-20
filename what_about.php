@@ -56,7 +56,7 @@
                         <p><strong>institution : </strong><?= $accademic['institution']; ?></p>
                         <div>
                             <p><strong>location : </strong><?= $accademic['location']; ?></p>
-                            <p><strong>website : </strong><a href="<?= $accademic['website']; ?>" title="go to the institution website" target="_blank"><?= $accademic['website'] ?></a></p>
+                            <p><strong>website : </strong><a href="<?= $accademic['website']; ?>" title="go to the institution website" target="_blank" title="Go to institute website"><?= $accademic['website'] ?></a></p>
                         </div>
                         <div>
                             <p><strong>start date : </strong><?= $accademic['start_date']; ?></p>
@@ -81,7 +81,7 @@
                         <p><strong>position : </strong><?= $workExperience['position']; ?></p>
                         <div>
                             <p><strong>location : </strong><?= $workExperience['location']; ?></p>
-                            <p><strong>website : </strong><a href="<?= $workExperience['link']; ?>" title="go to the company website" target="_blank"><?= $workExperience['link'] ?></a></p>
+                            <p><strong>website : </strong><a href="<?= $workExperience['link']; ?>" title="go to the company website" target="_blank" title="Go to company website"><?= $workExperience['link'] ?></a></p>
                         </div>
                         <div>
                             <p><strong>start date : </strong><?= $workExperience['start_date']; ?></p>

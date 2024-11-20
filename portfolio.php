@@ -25,7 +25,7 @@
                         <p><strong><?= $project['name']; ?></strong></p>
                         <p><?= $project['client']; ?></p>
                         <div class="link-container">
-                            <a href="portfolio_description.php?id=<?= $project['id']; ?>" target="_blank">Project Details</a>
+                            <a href="portfolio_description.php?id=<?= $project['id']; ?>" target="_blank" title="Go to project detail">Project Details</a>
                         </div>
                     </div>
                 <?php endif; ?>
@@ -45,7 +45,7 @@
                             <p><strong><?= $project['name']; ?></strong></p>
                             <p><?= $project['client']; ?></p>
                             <div class="link-container">
-                                <a href="portfolio_description.php?id=<?= $project['id']; ?>" target="_blank">Project Details</a>
+                                <a href="portfolio_description.php?id=<?= $project['id']; ?>" target="_blank" title="Go to project detail">Project Details</a>
                             </div>
                         </div>
                     <?php endif; ?>
@@ -68,7 +68,7 @@
                             <p><strong><?= $project['name']; ?></strong></p>
                             <p><?= $project['client']; ?></p>
                             <div class="link-container">
-                                <a href="portfolio_description.php?id=<?= $project['id']; ?>" target="_blank">Project Details</a>
+                                <a href="portfolio_description.php?id=<?= $project['id']; ?>" target="_blank" title="Go to project detail">Project Details</a>
                             </div>
                         </div>
                     <?php endif; ?>

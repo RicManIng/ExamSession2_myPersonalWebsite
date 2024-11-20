@@ -29,7 +29,7 @@
                     <li><strong>Debugging and Maintenance</strong>: rigorous testing and ongoing support for stability and longevity.</li>
                 </ul>
                 <p>Trust me to turn your ideas into high-quality embedded solutions, perfect for IoT applications, industrial automation, robotics, automotive systems, and more.</p>
-                <p class="centered"><strong><a href="<?= ($UserLogged) ? 'contact.php?state=4' : 'login.php?state=login'; ?>">Contact me</a></strong> to discuss your project and discover how we can help you achieve your technological goals.</p>
+                <p class="centered"><strong><a href="<?= ($UserLogged) ? 'contact.php?state=4' : 'login.php?state=login'; ?>" title="Go to contact page">Contact me</a></strong> to discuss your project and discover how we can help you achieve your technological goals.</p>
             </div>
         </section>
         <section class="web">
@@ -53,7 +53,7 @@
                     Whether you need a simple website, a complex web application, or seamless integration with existing systems, 
                     we’re here to bring your vision to life with precision and attention to detail.
                 </p>
-                <p class="centered"><strong><a href="<?= ($UserLogged) ? 'contact.php?state=4' : 'login.php?state=login'; ?>">Contact me</a></strong> today to start building a web solution that elevates your online presence!</p>
+                <p class="centered"><strong><a href="<?= ($UserLogged) ? 'contact.php?state=4' : 'login.php?state=login'; ?>" title="Go to contact page">Contact me</a></strong> today to start building a web solution that elevates your online presence!</p>
             </div>
         </section>
     </main>

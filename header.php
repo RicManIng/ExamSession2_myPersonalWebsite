@@ -16,9 +16,9 @@
                 <?php foreach($nav_array as $nav): ?>
                     <?php if(($nav['type'] == 'nav' || $nav['type'] == 'nav-signed') && $nav['id'] < 5): ?>
                         <?php if(isset($_GET['selected']) && $_GET['selected'] == $nav['id']): ?>
-                            <li><a href="<?php echo $nav['url']; ?>" class="selected"><?php echo $nav['name']; ?></a></li>
+                            <li><a href="<?php echo $nav['url']; ?>" class="selected" title="<?= $nav['title']; ?>"><?php echo $nav['name']; ?></a></li>
                         <?php else: ?>
-                            <li><a href="<?php echo $nav['url']; ?>"><?php echo $nav['name']; ?></a></li>
+                            <li><a href="<?php echo $nav['url']; ?>" title="<?= $nav['title']; ?>"><?php echo $nav['name']; ?></a></li>
                         <?php endif; ?>    
                     <?php endif; ?>
                 <?php endforeach; ?>
@@ -27,9 +27,9 @@
                 <?php foreach($nav_array as $nav): ?>
                     <?php if($nav['type'] == 'nav' && $nav['id'] < 5): ?>
                         <?php if(isset($_GET['selected']) && $_GET['selected'] == $nav['id']): ?>
-                            <li><a href="<?php echo $nav['url']; ?>" class="selected"><?php echo $nav['name']; ?></a></li>
+                            <li><a href="<?php echo $nav['url']; ?>" class="selected" title="<?= $nav['title']; ?>"><?php echo $nav['name']; ?></a></li>
                         <?php else: ?>
-                            <li><a href="<?php echo $nav['url']; ?>"><?php echo $nav['name']; ?></a></li>
+                            <li><a href="<?php echo $nav['url']; ?>" title="<?= $nav['title']; ?>"><?php echo $nav['name']; ?></a></li>
                         <?php endif; ?> 
                     <?php endif; ?>
                 <?php endforeach; ?>

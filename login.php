@@ -152,7 +152,7 @@
                         }
                     ?>
                     <p>Already have an account?</p>
-                    <a href="login.php?state=login">Login</a>
+                    <a href="login.php?state=login" title="Go to Login page">Login</a>
                 </form>
             <?php elseif($_GET['state'] == 'login') : ?>
                 <form action="" method='POST' class='container'>
@@ -168,7 +168,7 @@
                         }
                     ?>
                     <p>Don't have an account?</p>
-                    <a href="login.php?state=signup">Sign Up</a>
+                    <a href="login.php?state=signup" title="Go to registration page">Sign Up</a>
                 </form>
             <?php endif; ?>
         <?php endif; ?>
