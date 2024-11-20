@@ -1,5 +1,5 @@
 <header>
-    <a href="home.php" title='go to home page' class='link-image'><img src="./resources/img/logo-bg.png" alt="mio-logo"></a>
+    <a href="index.php" title='go to home page' class='link-image'><img src="./resources/img/logo-bg.png" alt="mio-logo"></a>
     <nav class="center-nav" id="center-nav">
         <!-- common part of nav bar -->
         <!-- in phone viewport show the hamburger icon to access to nav bar -->
