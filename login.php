@@ -26,15 +26,15 @@
         $err_msg_date = null;
         $err_msg_complete = null;
 
-        $name = null;
-        $surname = null;
-        $username = null;
-        $email = null;
-        $password = null;
-        $confirm_password = null;
-        $day = null;
-        $month = null;
-        $year = null;
+        $name = '';
+        $surname = '';
+        $username = '';
+        $email = '';
+        $password = '';
+        $confirm_password = '';
+        $day = '';
+        $month = '';
+        $year = '';
 
 
         if(!empty($_POST)){
@@ -42,15 +42,15 @@
 
                 $valid_conditions = false;
 
-                $name = $_POST['name'] ?? null;
-                $surname = $_POST['surname'] ?? null;
-                $username = $_POST['username'] ?? null;
-                $email = $_POST['email'] ?? null;
-                $password = $_POST['password'] ?? null;
-                $confirm_password = $_POST['confirm_password'] ?? null;
-                $day = $_POST['day'] ?? null;
-                $month = $_POST['month'] ?? null;
-                $year = $_POST['year'] ?? null;
+                $name = $_POST['name'] ?? '';
+                $surname = $_POST['surname'] ?? '';
+                $username = $_POST['username'] ?? '';
+                $email = $_POST['email'] ?? '';
+                $password = $_POST['password'] ?? '';
+                $confirm_password = $_POST['confirm_password'] ?? '';
+                $day = $_POST['day'] ?? '';
+                $month = $_POST['month'] ?? '';
+                $year = $_POST['year'] ?? '';
 
                 foreach($_POST as $key => $value){
                     if(empty($value)){
@@ -63,59 +63,59 @@
                 if($password != $confirm_password){
                     $valid_conditions = false;
                     $err_msg_confirm_password = 'Error: password and confirm password are different';
-                    $password = null;
-                    $confirm_password = null;
+                    $password = '';
+                    $confirm_password = '';
                 }
 
                 if($user->username_exists($username, $file_user)){
                     $valid_conditions = false;
                     $err_msg_username = 'Error: username already exists';
-                    $username = null;
+                    $username = '';
                 }
 
                 if(!$user->set_username($username)){
                     $valid_conditions = false;
                     $err_msg_username = 'Error: invalid username format, max length = 20';
-                    $username = null;
+                    $username = '';
                 }
 
                 if(!$user->set_password($password)){
                     $valid_conditions = false;
                     $err_msg_password = 'Error: invalid password format, min length = 8, max length = 20';
-                    $password = null;
-                    $confirm_password = null;
+                    $password = '';
+                    $confirm_password = '';
                 }
 
                 if(!$user->set_birthDate($day, $month, $year)){
                     $valid_conditions = false;
                     $err_msg_date = 'Error: invalid birth date, this is due to a wrong date format or you are not 18+';
-                    $day = null;
-                    $month = null;
-                    $year = null;
+                    $day = '';
+                    $month = '';
+                    $year = '';
                 }
 
                 if($user->email_exists($email, $file_user)){
                     $valid_conditions = false;
                     $err_msg_email = 'Error: email already exists';
-                    $email = null;
+                    $email = '';
                 }
 
                 if(!$user->set_email($email)){
                     $valid_conditions = false;
                     $err_msg_email = 'Error: invalid email format';
-                    $email = null;
+                    $email = '';
                 }
 
                 if(!$user->set_name($name)){
                     $valid_conditions = false;
                     $err_msg_name = 'Error: invalid name format, max length = 20';
-                    $name = null;
+                    $name = '';
                 }
 
                 if(!$user->set_surname($surname)){
                     $valid_conditions = false;
                     $err_msg_surname = 'Error: invalid surname format, max length = 20';
-                    $surname = null;
+                    $surname = '';
                 }
 
                 if($valid_conditions){
@@ -126,8 +126,8 @@
 
             elseif($_GET['state'] == 'login'){
                 $valid_conditions = true;
-                $username = $_POST['username'] ?? null;
-                $password = $_POST['password'] ?? null;
+                $username = $_POST['username'] ?? '';
+                $password = $_POST['password'] ?? '';
                 if(!($username && $password)){
                     $valid_conditions = false;
                     $error_message = 'Error: check there is no empty field';
