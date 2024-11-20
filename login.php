@@ -17,41 +17,108 @@
         $user_saved = false;
         $user_loaded = false;
 
+        $err_msg_name = null;
+        $err_msg_surname = null;
+        $err_msg_username = null;
+        $err_msg_email = null;
+        $err_msg_password = null;
+        $err_msg_confirm_password = null;
+        $err_msg_date = null;
+        $err_msg_complete = null;
+
+        $name = null;
+        $surname = null;
+        $username = null;
+        $email = null;
+        $password = null;
+        $confirm_password = null;
+        $day = null;
+        $month = null;
+        $year = null;
+
+
         if(!empty($_POST)){
             if($_GET['state'] == 'signup'){
 
-                $valid_conditions = true;
+                $valid_conditions = false;
 
-                if(!(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirm_password']))){
+                $name = $_POST['name'] ?? null;
+                $surname = $_POST['surname'] ?? null;
+                $username = $_POST['username'] ?? null;
+                $email = $_POST['email'] ?? null;
+                $password = $_POST['password'] ?? null;
+                $confirm_password = $_POST['confirm_password'] ?? null;
+                $day = $_POST['day'] ?? null;
+                $month = $_POST['month'] ?? null;
+                $year = $_POST['year'] ?? null;
+
+                foreach($_POST as $key => $value){
+                    if(empty($value)){
+                        $valid_conditions = false;
+                        $err_msg_complete = 'Error: check there is no empty field';
+                        break;
+                    }
+                }
+
+                if($password != $confirm_password){
                     $valid_conditions = false;
-                    $error_message = 'Error: check there is no empty field';
-                } elseif ($_POST['password'] != $_POST['confirm_password']){
+                    $err_msg_confirm_password = 'Error: password and confirm password are different';
+                    $password = null;
+                    $confirm_password = null;
+                }
+
+                if($user->username_exists($username, $file_user)){
                     $valid_conditions = false;
-                    $error_message = 'Error: password and confirm password are different';
-                } elseif ($user->username_exists($_POST['username'], $file_user)){
+                    $err_msg_username = 'Error: username already exists';
+                    $username = null;
+                }
+
+                if(!$user->set_username($username)){
                     $valid_conditions = false;
-                    $error_message = 'Error: username already exists';
-                } elseif (!$user->set_username($_POST['username'])){
+                    $err_msg_username = 'Error: invalid username format, max length = 20';
+                    $username = null;
+                }
+
+                if(!$user->set_password($password)){
                     $valid_conditions = false;
-                    $error_message = 'Error: invalid username format';
-                } elseif (!$user->set_password($_POST['password'])){
+                    $err_msg_password = 'Error: invalid password format, min length = 8, max length = 20';
+                    $password = null;
+                    $confirm_password = null;
+                }
+
+                if(!$user->set_birthDate($day, $month, $year)){
                     $valid_conditions = false;
-                    $error_message = 'Error: invalid password format';
-                } elseif(!$user->set_birthDate($_POST['day'], $_POST['month'], $_POST['year'])){
-                    $error_message = 'Error: invalid birth date format';
-                } elseif($user->email_exists($_POST['email'], $file_user)){
+                    $err_msg_date = 'Error: invalid birth date, this is due to a wrong date format or you are not 18+';
+                    $day = null;
+                    $month = null;
+                    $year = null;
+                }
+
+                if($user->email_exists($email, $file_user)){
                     $valid_conditions = false;
-                    $error_message = 'Error: email already exists';
-                } elseif(!$user->set_email($_POST['email'])){
+                    $err_msg_email = 'Error: email already exists';
+                    $email = null;
+                }
+
+                if(!$user->set_email($email)){
                     $valid_conditions = false;
-                    $error_message = 'Error: invalid email format';
-                } elseif(!$user->set_name($_POST['name'])){
+                    $err_msg_email = 'Error: invalid email format';
+                    $email = null;
+                }
+
+                if(!$user->set_name($name)){
                     $valid_conditions = false;
-                    $error_message = 'Error: invalid name format';
-                } elseif(!$user->set_surname($_POST['surname'])){
+                    $err_msg_name = 'Error: invalid name format, max length = 20';
+                    $name = null;
+                }
+
+                if(!$user->set_surname($surname)){
                     $valid_conditions = false;
-                    $error_message = 'Error: invalid surname format';
-                } else {
+                    $err_msg_surname = 'Error: invalid surname format, max length = 20';
+                    $surname = null;
+                }
+
+                if($valid_conditions){
                     $user->user_save($file_user);
                     $user_saved = true;
                 }
@@ -59,13 +126,15 @@
 
             elseif($_GET['state'] == 'login'){
                 $valid_conditions = true;
-                if(!(isset($_POST['username']) && isset($_POST['password']))){
+                $username = $_POST['username'] ?? null;
+                $password = $_POST['password'] ?? null;
+                if(!($username && $password)){
                     $valid_conditions = false;
                     $error_message = 'Error: check there is no empty field';
-                } elseif (!$user->username_exists($_POST['username'], $file_user)){
+                } elseif (!$user->username_exists($username, $file_user)){
                     $valid_conditions = false;
                     $error_message = 'Error: username not found';
-                } elseif (!$user->check_login($_POST['username'], $_POST['password'], $file_user)) {
+                } elseif (!$user->check_login($username, $password, $file_user)) {
                     $valid_conditions = false;
                     $error_message = 'Error: incorrect password';
                 }
