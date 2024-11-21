@@ -52,7 +52,7 @@
             <?php endif; ?>
         <?php else: ?>
             <div class='container'>
-            <form action="" method="post" novalidate>
+            <form action="contact.php?selected=4" method="post" novalidate>
                 <h1>Contact me</h1>
                 <label for="argument">Select the message argument :</label>
                 <select name="argument" id="argument">

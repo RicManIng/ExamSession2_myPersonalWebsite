@@ -6,7 +6,7 @@ X 2.  il form deve essere validato lato server, quindi  devi disabilitare la val
 X 3.  se faccio un errore di compilazione del form, la pagina deve rimanere sul form ed evidenziarmi i campi sbagliati (un colore ed un testo) 
     ma mantenere il testo dei campi compilati. Il tuo porta ad un'altra pagina anche se non compilato
 
-4.  tutte le pagine devono essere validate, quindi tasto destro sulla pagina -> visualizza sorgente copia ed incolli nel validatore, 
+X 4.  tutte le pagine devono essere validate, quindi tasto destro sulla pagina -> visualizza sorgente copia ed incolli nel validatore, 
     così sai se il tuo codice è totalmente corretto
 
 X 5.  tutti i link devono contenere l'attributo TITLE che indica all'utente cosa accade in caso di click sul link
