@@ -3,7 +3,7 @@ X 1.  la prima pagina si deve chiamare index.php
 X 2.  il form deve essere validato lato server, quindi  devi disabilitare la validazione del browser per essere sicuro di far arrivare i dati al server. 
     Aggiungi NOVALIDATE come attributo del FORM
 
-3.  se faccio un errore di compilazione del form, la pagina deve rimanere sul form ed evidenziarmi i campi sbagliati (un colore ed un testo) 
+X 3.  se faccio un errore di compilazione del form, la pagina deve rimanere sul form ed evidenziarmi i campi sbagliati (un colore ed un testo) 
     ma mantenere il testo dei campi compilati. Il tuo porta ad un'altra pagina anche se non compilato
 
 4.  tutte le pagine devono essere validate, quindi tasto destro sulla pagina -> visualizza sorgente copia ed incolli nel validatore, 
