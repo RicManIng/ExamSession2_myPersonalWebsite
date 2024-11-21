@@ -181,7 +181,7 @@
             </div>
         <?php else: ?>
             <?php if($_GET['state'] == 'signup') : ?>
-                <form action="" method="POST" class='container' novalidate>
+                <form action="login.php?state=signup" method="POST" class='container' novalidate>
                     <h1>Registration</h1>
                     <label for="name">Name * :</label>
                     <input type="text" name="name" id="name" value="<?= $name; ?>" required placeholder="insert your name" <?= ($err_msg_name) ? "class='input-error'" : ""?>>
@@ -226,7 +226,7 @@
                             echo "<p class='errors'>$err_msg_confirm_password</p>";
                         }
                     ?>
-                    <label for="date">Birth date : </label>
+                    <label>Birth date : </label>
                     <div>
                         <select name="day" id="date_day">
                             <option value="0">Day</option>
@@ -274,7 +274,7 @@
                     <a href="login.php?state=login" title="Go to Login page">Login</a>
                 </form>
             <?php elseif($_GET['state'] == 'login') : ?>
-                <form action="" method='POST' class='container' novalidate>
+                <form action="login.php?state=login" method='POST' class='container' novalidate>
                     <h1>Login</h1>
                     <label for="username">Username :</label>
                     <input type="text" name="username" id="username" value="<?php echo $_POST['username'] ??  ''; ?>" required placeholder="insert your username">
