@@ -44,6 +44,11 @@ main {
             }
         }
 
+        input.input-error{
+            border: 1px solid rgb(255, 46, 46);
+            background-color: rgb(255, 134, 134);
+        }
+
         input:focus, select:focus {
             background-color: $login-element-bg-color-focus; 
         }

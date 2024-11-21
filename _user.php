@@ -78,7 +78,7 @@
         }
 
         public function set_name($value){
-            $temp = htmlspecialchars(trim($value));
+            $temp = htmlspecialchars($value);
             if (is_string($temp) && strlen($temp) <= 50){
                 $this->name = $temp;
                 return 1;
@@ -92,7 +92,7 @@
         }
 
         public function set_surname($value){
-            $temp = htmlspecialchars(trim($value));
+            $temp = htmlspecialchars($value);
             if (is_string($temp) && strlen($temp) <= 50){
                 $this->surname = $temp;
                 return 1;
